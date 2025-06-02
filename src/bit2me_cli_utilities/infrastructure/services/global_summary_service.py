@@ -2,6 +2,7 @@ import pandas as pd
 from bit2me_cli_utilities.infrastructure.services.remote.bit2me_remote_service import (
     Bit2MeRemoteService,
 )
+from io import BytesIO
 from bit2me_cli_utilities.domain.global_summary import GlobalSummary
 from datetime import datetime, UTC
 from httpx import Client
@@ -31,7 +32,7 @@ class GlobalSummaryService:
                     )
                 )
                 df = pd.read_excel(
-                    current_excel_file_content, header=1, sheet_name=None
+                    BytesIO(current_excel_file_content), header=1, sheet_name=None
                 )
                 for _, sheet_data in df.items():
                     filtered_df = sheet_data[sheet_data["Operation type"] == "Deposit"]

@@ -48,7 +48,7 @@ class Bit2MeRemoteService(AbstractHttpRemoteService):
 
     def get_accounting_summary_by_year(
         self, year: str, *, client: Client | None = None
-    ) -> str | bytes:
+    ) -> bytes:
         response = self._perform_http_request(
             url=f"/v1/accounting/summary/{year}",
             params={
