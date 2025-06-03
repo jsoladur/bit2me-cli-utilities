@@ -109,7 +109,7 @@ class Bit2MeRemoteService(AbstractHttpRemoteService):
         return Client(
             base_url=self._base_url,
             headers={"X-API-KEY": self._api_key},
-            timeout=Timeout(10, connect=5, read=60),
+            timeout=Timeout(30, connect=5, read=120),
         )
 
     def _generate_api_signature(
