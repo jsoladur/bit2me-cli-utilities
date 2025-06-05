@@ -37,16 +37,28 @@ pip install .
 ## Usage
 The CLI provides various commands to interact with the Bit2Me platform. Here are some examples:
 
-```bash
-uv sync
-# View available commands
-cli --help
+### Global Summary
+View your Bit2Me account's financial summary, including total deposits, withdrawals, current value, and net revenue:
 
-# Execute specific commands
-cli [command] [options]
+```bash
+# View global summary
+cli global-summary show
 ```
 
-For detailed documentation on available commands and their usage, please refer to the CLI help menu.
+This will display a formatted summary of your account's financial status in EUR.
+
+### General Commands
+```bash
+# View all available commands
+cli --help
+
+# Get help for a specific command group
+cli global-summary --help
+```
+
+For detailed documentation on other available commands and their usage, please refer to the CLI help menu.
+
+
 
 ## Development
 
